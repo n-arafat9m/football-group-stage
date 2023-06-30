@@ -1,11 +1,14 @@
-import { per } from 'percom';
+//import { per } from 'percom';
 
 const m = new Map();
 const W = 3, L = 0, D = 1;
 
 var fun = function(team1, team2, team3, team4, matchday) {
     if (matchday == 6) {
-        let state = `${team1},${team2},${team3},${team4}`
+        let arr = [team1, team2, team3, team4]
+        arr.sort((a, b) => a - b)
+        let [a, b, c, d] = arr
+        let state = `${a},${b},${c},${d}`
         if(!m.get(state)) {
             m.set(state, {val: 0});
         }
@@ -60,17 +63,18 @@ fun(0, 0, 0, 0, 0);
 
 let s = 0;
 
-//console.log('The number of possibilities for each point distribution:')
+console.log('The number of possibilities for each point distribution:')
 
-//m.forEach((v, k) => {
-//    console.log(`${k}: ${v.val}`);
-//    s += v.val;
-//})
+m.forEach((v, k) => {
+    console.log(`${k}: ${v.val}`);
+    s += v.val;
+})
 
-//console.log(`The total number of possibilities is ${s}, which is exactly nine to the sixth (there are nine different possibilities on each matchday)`)
+console.log(`The total number of possibilities is ${s}, which is exactly nine to the sixth (there are nine different possibilities on each matchday)`)
 
 //console.log(`There are ${m.get('8,8,8,8').val} ways every team can end up with eight points by the end of the stage`)
 
+/*
 let keys = [...m.keys()];
 let newM = new Map();
 
@@ -111,3 +115,4 @@ for(let i of newM) {
 mx.a = mx.a.split('|')
 mx.a.forEach(e => console.log(e))
 console.log(mx.b)
+*/
