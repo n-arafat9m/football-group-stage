@@ -1,0 +1,15 @@
+{
+  "name": "football---possible-point-distributions",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A collection of scripts I wrote to calculate a few number of possibilities related to the number of points a team can achieve in a group stage of four or the number of possible ways a group of four teams can be ordered (or the distribution of points in that group without attention to who came out at what position)",
+  "main": "AllFourTeams.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Muhammad Arafat",
+  "license": "ISC",
+  "dependencies": {
+    "percom": "^1.1.3"
+  }
+}
