@@ -15,11 +15,10 @@ var fun = function(points, matchday, currentCombination) {
     // there are six matchdays
     if (matchday == 6) {
         m.get(points).val++;
-        // to be removed - just a test (added on March 19 - 2025)
+        // The if condition below has been added on March 19 - 2025
         // the purpose is to see the actual combinations that can produce a certain number of finish-points
-        // currently we're looking at the combinations that can produce 10
-        // Change to the number of points you want to see the combinations that can produce it
-        // Mindblowing stuff huh?
+        // Pass the number of finish points you desire to see in detail the ways it can be achieved through an argument when executing the script
+        // The process.argv[2] argument represents the number of finish-points desired
         if (points == process.argv[2]) {
             console.log(currentCombination);
         }
