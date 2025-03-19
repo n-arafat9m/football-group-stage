@@ -10,7 +10,7 @@ Currently there are two scripts, both written in Javascript. A brief explanation
 
 Used to generate the points with which a certain team can finish the group stage with, and calculate the number of ways each one of those finish-points can be accumulated by the team through Wins, Draws and Losses.
 
-Can be run with _code_ node ./OneTeam.js numerical argument _code_, where the argument represents the number of points of choice you'd like to see in detail the different combinations of Wins, Draws and Losses that yield this possibility.
+Can be run with `node ./OneTeam.js numerical_argument`, where the argument represents the number of points of choice you'd like to see in detail the different combinations of Wins, Draws and Losses that yield this possibility.
 
 # AllFourTeams.js:
 
