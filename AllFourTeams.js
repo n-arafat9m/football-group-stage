@@ -59,7 +59,11 @@ var fun = function(team1, team2, team3, team4, matchday) {
 }
 
 // Kick off the Group Stage with all teams having zero points before matchday1
+//const st = Date.now();
 fun(0, 0, 0, 0, 0);
+//const et = Date.now();
+
+//console.log(`Execution took ${et-st}ms`)
 
 let s = 0;
 
@@ -72,7 +76,7 @@ m.forEach((v, k) => {
 
 console.log(`The total number of possibilities is ${s}, which is exactly nine to the sixth (there are nine different possibilities on each matchday)`)
 
-//console.log(`There are ${m.get('8,8,8,8').val} ways every team can end up with eight points by the end of the stage`)
+console.log(`There are ${m.get('8,8,8,8').val} ways every team can end up with eight points by the end of the stage`)
 
 /*
 let keys = [...m.keys()];

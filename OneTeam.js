@@ -5,27 +5,35 @@ const m = new Map();
 // on every new matchday, the team can either increase by 3 (W), or by 1 (D), or retain the same number of points it had before the match (L)
 const W = 3, D = 1, L = 0;
 
-// A team can only accumalate a number of points between 0 and 18 by the end of the group stage
+// A team can only accumalate a number of points between 0 and 18 by the end of the group stage (there's a total of six matches)
 for (let i = 0; i <= 18; ++i) {
     m.set(i, {val: 0});
 }
 
-
-var fun = function(points, matchday) {
+// the currentCombination argument has been added on March 19 - 2025
+var fun = function(points, matchday, currentCombination) {
     // there are six matchdays
     if (matchday == 6) {
         m.get(points).val++;
+        // to be removed - just a test (added on March 19 - 2025)
+        // the purpose is to see the actual combinations that can produce a certain number of finish-points
+        // currently we're looking at the combinations that can produce 10
+        // Change to the number of points you want to see the combinations that can produce it
+        // Mindblowing stuff huh?
+        if (points == process.argv[2]) {
+            console.log(currentCombination);
+        }
         return;
     }
 
     // matchday possibilities
-    fun(points+W, matchday+1);
-    fun(points+D, matchday+1);
-    fun(points+L, matchday+1);
+    fun(points+W, matchday+1, currentCombination+"W");
+    fun(points+D, matchday+1, currentCombination+"D");
+    fun(points+L, matchday+1, currentCombination+"L");
 }
 
 // Kick off Group Stage with the team having zero points before matchday #1
-fun(0, 0);
+fun(0, 0, "");
 
 // Sum up the number of all the possibilities of the results of a single team by the end of the group stage
 let s = 0;
